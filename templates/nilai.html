@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Judul halaman yang akan tampil di tab browser -->
+    <title>Penilaian</title>
+</head>
+<body>
+    <!-- Judul utama halaman -->
+    <h1>Hasil Penilaian</h1>
+
+    <!-- Blok kondisi untuk menentukan kategori berdasarkan nilai 'score' -->
+    {% if score >= 90 %}
+        <!-- Jika nilai 90 ke atas -->
+        <p>Nilai Anda: {{ score }} - Sangat Baik! 🎉</p>
+    {% elif score >= 75 %}
+        <!-- Jika nilai antara 75 sampai 89 -->
+        <p>Nilai Anda: {{ score }} - Baik 👍</p>
+    {% elif score >= 60 %}
+        <!-- Jika nilai antara 60 sampai 74 -->
+        <p>Nilai Anda: {{ score }} - Cukup 😊</p>
+    {% else %}
+        <!-- Jika nilai di bawah 60 -->
+        <p>Nilai Anda: {{ score }} - Perlu Perbaikan 😢</p>
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <!-- Menentukan karakter encoding untuk dokumen -->
+    <meta charset="UTF-8">
+
+    <!-- Membuat tampilan halaman responsif sesuai ukuran layar perangkat -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Judul halaman yang akan tampil di tab browser -->
+    <title>About</title>
+
+    <!-- Menghubungkan file CSS dari folder 'static', menggunakan fungsi url_for dari Flask -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Judul utama halaman -->
+    <h1>Ini Halaman About</h1>
+
+    <!-- Paragraf sambutan -->
+    <p>Selamat datang di halaman About!</p>
+</body>
+</html>

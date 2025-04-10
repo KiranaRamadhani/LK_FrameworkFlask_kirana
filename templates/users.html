@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Judul halaman yang tampil di tab browser -->
+    <title>Daftar Pengguna</title>
+
+    <!-- CSS internal untuk mengatur tampilan konten -->
+    <style>
+        /* Semua konten selain yang utama disembunyikan secara default */
+        .content {
+            display: none;
+        }
+
+        /* Konten utama akan ditampilkan saat pertama kali halaman dimuat */
+        .main-content {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Konten utama: Menampilkan daftar nama pengguna -->
+    <div id="main_content" class="main-content">
+        <h1>Daftar Pengguna</h1>
+        <ul>
+            {% for user in users %}
+                <li>{{ user.name }}</li> <!-- Menampilkan nama setiap user -->
+            {% endfor %}
+        </ul>
+    </div>
+
+    <!-- Tombol-tombol navigasi untuk menampilkan bagian tertentu dari halaman -->
+    <a href="javascript:void(0)" onclick="showContent('for_statement')">
+        <button>7.1. For Statement dalam Template Flask</button>
+    </a><br>
+
+    <a href="javascript:void(0)" onclick="showContent('if_statement')">
+        <button>7.2. If Statement dalam Template Flask</button>
+    </a><br>
+
+    <a href="javascript:void(0)" onclick="showContent('loop_index')">
+        <button>7.4. loop.index dalam for</button>
+    </a><br>
+
+    <!-- Konten tambahan: For Statement -->
+    <div id="for_statement" class="content">
+        <h2>7.1. For Statement dalam Template Flask</h2>
+        <ul>
+            {% for user in users %}
+                <li>{{ user.name }}</li> <!-- Hanya menampilkan nama user -->
+            {% endfor %}
+        </ul>
+    </div>
+
+    <!-- Konten tambahan: If Statement -->
+    <div id="if_statement" class="content">
+        <h2>7.2. If Statement dalam Template Flask</h2>
+        <ul>
+            {% if users %}
+                {% for user in users %}
+                    {% if user.role == "admin" %}
+                        <!-- Menampilkan nama admin dengan format bold -->
+                        <li><strong>{{ user.name }} (Admin)</strong></li>
+                    {% else %}
+                        <!-- Menampilkan user biasa -->
+                        <li>{{ user.name }}</li>
+                    {% endif %}
+                {% endfor %}
+            {% else %}
+                <!-- Pesan jika tidak ada user sama sekali -->
+                <p>Tidak ada pengguna.</p>
+            {% endif %}
+        </ul>
+    </div>
+
+    <!-- Konten tambahan: Loop Index -->
+    <div id="loop_index" class="content">
+        <h2>7.4. Loop Index dalam for</h2>
+        <ul>
+            {% for user in users %}
+                <!-- Menampilkan nomor urut user menggunakan loop.index -->
+                <li>{{ loop.index }}. {{ user.name }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <!-- JavaScript untuk mengatur tampilan konten secara dinamis -->
+    <script>
+        function showContent(id) {
+            // Menyembunyikan semua div dengan class 'content'
+            var contents = document.querySelectorAll('.content');
+            contents.forEach(function(content) {
+                content.style.display = 'none';
+            });
+
+            // Menyembunyikan konten utama
+            document.getElementById('main_content').style.display = 'none';
+
+            // Menampilkan konten berdasarkan id yang diklik
+            document.getElementById(id).style.display = 'block';
+        }
+    </script>
+</body>
+</html>

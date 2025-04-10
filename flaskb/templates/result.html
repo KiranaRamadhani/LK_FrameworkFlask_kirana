@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <!-- Judul halaman yang akan muncul di tab browser -->
+    <title>Hasil Perhitungan</title>
+
+    <!-- Menghubungkan file CSS dari folder static -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <script>
+        // Fungsi untuk memformat angka menjadi format Rupiah (Rp) dengan titik sebagai pemisah ribuan
+        function formatCurrency(value) {
+            let formattedValue = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+            return "Rp " + formattedValue;
+        }
+
+        // Menjalankan script setelah halaman selesai dimuat
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mengambil elemen DOM berdasarkan ID
+            const totalElement = document.querySelector('#total');
+            const interestElement = document.querySelector('#interest');
+
+            // Mengambil nilai asli dari atribut data-value dan mengubahnya jadi angka
+            const total = parseFloat(totalElement.dataset.value);
+            const interest = parseFloat(interestElement.dataset.value);
+
+            // Menampilkan nilai yang sudah diformat sebagai mata uang Rupiah
+            totalElement.textContent = formatCurrency(total);
+            interestElement.textContent = formatCurrency(interest);
+        });
+    </script>
+</head>
+<body>
+    <!-- Container utama untuk hasil perhitungan -->
+    <div class="container result-container">
+        <h2>Hasil Perhitungan</h2>
+
+        <!-- Menampilkan total tabungan akhir dengan data-value untuk diakses via JavaScript -->
+        <p id="total" data-value="{{ total }}">{{ total }}</p>
+
+        <!-- Menampilkan nilai bunga yang diperoleh -->
+        <p id="interest" data-value="{{ interest }}">{{ interest }}</p>
+
+        <!-- Link untuk kembali ke halaman utama (form input) -->
+        <a href="/">Hitung Lagi</a>
+    </div>
+</body>
+</html>

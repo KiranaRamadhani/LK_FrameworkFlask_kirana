@@ -1,0 +1,88 @@
+/* General body styling: Mengatur font utama dan tampilan dasar halaman */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Font modern yang mudah dibaca */
+    background-color: #f4f7fc;  /* Warna latar belakang abu kebiruan yang lembut */
+    margin: 0;                  /* Menghapus margin default browser */
+    padding: 0;                 /* Menghapus padding default browser */
+}
+
+/* Container for centering content: Pusat konten di tengah halaman */
+.container {
+    width: 100%;                    /* Lebar penuh agar responsif */
+    max-width: 600px;              /* Maksimal lebar konten */
+    margin: 40px auto;             /* Margin vertikal 40px, horizontal auto untuk tengah */
+    padding: 20px;                 /* Padding dalam container */
+    background-color: white;      /* Latar belakang putih untuk konten utama */
+    border-radius: 8px;           /* Sudut membulat */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Bayangan lembut untuk efek elevasi */
+}
+
+/* Header styling: Judul halaman/form */
+h2 {
+    color: #333;              /* Warna abu gelap */
+    font-size: 24px;          /* Ukuran teks besar */
+    margin-bottom: 20px;      /* Jarak bawah dari elemen selanjutnya */
+    text-align: center;       /* Teks ditengah */
+}
+
+/* Form elements styling: Form dengan elemen vertikal berjajar rapi */
+form {
+    display: flex;             /* Gunakan flexbox */
+    flex-direction: column;    /* Susun elemen secara vertikal */
+    gap: 15px;                 /* Jarak antar elemen form */
+}
+
+/* Styling untuk input angka dan tombol */
+input[type="number"],
+button {
+    padding: 12px;              /* Ruang di dalam elemen */
+    font-size: 16px;            /* Ukuran teks nyaman dibaca */
+    border-radius: 5px;         /* Sudut agak membulat */
+    border: 1px solid #ccc;     /* Garis tepi abu muda */
+    width: 100%;                /* Lebar penuh sesuai container */
+    box-sizing: border-box;     /* Termasuk padding dan border dalam ukuran total */
+}
+
+/* Efek saat input aktif/fokus */
+input[type="number"]:focus {
+    border-color: #4CAF50;      /* Ubah warna border saat fokus */
+    outline: none;              /* Hilangkan outline default browser */
+}
+
+/* Tombol submit */
+button {
+    background-color: #4CAF50;  /* Warna hijau */
+    color: white;               /* Teks putih */
+    border: none;               /* Hilangkan border */
+    cursor: pointer;            /* Tampilkan ikon tangan saat hover */
+}
+
+/* Efek hover tombol */
+button:hover {
+    background-color: #45a049;  /* Warna hijau lebih gelap saat disentuh */
+}
+
+/* Styling untuk halaman hasil / result */
+.result-container {
+    text-align: center;        /* Pusatkan konten */
+}
+
+/* Paragraf hasil */
+.result-container p {
+    font-size: 18px;           /* Ukuran teks menengah */
+    margin: 10px 0;            /* Jarak atas dan bawah */
+}
+
+/* Tautan balik ke form atau halaman lain */
+.result-container a {
+    display: inline-block;     /* Agar bisa diberi margin & padding */
+    margin-top: 20px;          /* Jarak dari elemen atas */
+    font-size: 16px;
+    color: #4CAF50;            /* Warna hijau seperti tombol */
+    text-decoration: none;     /* Hilangkan garis bawah */
+}
+
+/* Efek hover untuk link */
+.result-container a:hover {
+    text-decoration: underline;  /* Tambahkan garis bawah saat disentuh */
+}

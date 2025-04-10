@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Judul halaman yang akan ditampilkan di tab browser -->
+    <title>Daftar Mahasiswa</title>
+</head>
+<body>
+    <!-- Judul utama halaman -->
+    <h1>Daftar Mahasiswa</h1>
+
+    <!-- Membuat daftar tidak berurutan (unordered list) -->
+    <ul>
+        <!-- Perulangan untuk setiap item dalam list 'mahasiswa' yang dikirim dari Flask -->
+        {% for mhs in mahasiswa %}
+            <li>
+                <!-- Menampilkan nama mahasiswa dan nilai mereka -->
+                {{ mhs.nama }} - Nilai: {{ mhs.nilai }} - 
+
+                <!-- Kondisional berdasarkan nilai mahasiswa -->
+                {% if mhs.nilai >= 90 %}
+                    Lulus dengan Pujian 🎓
+                {% elif mhs.nilai >= 75 %}
+                    Lulus 👍
+                {% elif mhs.nilai >= 60 %}
+                    Lulus Bersyarat 😊
+                {% else %}
+                    Tidak Lulus 😢
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

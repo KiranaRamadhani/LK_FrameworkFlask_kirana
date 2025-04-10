@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <!-- Judul halaman yang akan muncul di tab browser -->
+    <title>Kalkulator Keuangan</title>
+
+    <!-- Menghubungkan file CSS dari folder static Flask -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Container utama untuk membungkus konten form agar rapi dan terpusat -->
+    <div class="container">
+        <!-- Judul utama halaman -->
+        <h2>Kalkulator Bunga Tabungan</h2>
+
+        <!-- Formulir input yang menggunakan metode POST untuk mengirim data ke server -->
+        <form method="POST">
+            <!-- Input untuk modal awal -->
+            Modal Awal: 
+            <input type="number" name="principal" required><br>
+
+            <!-- Input untuk suku bunga -->
+            Suku Bunga (% per tahun): 
+            <input type="number" name="rate" required><br>
+
+            <!-- Input untuk jangka waktu -->
+            Waktu (tahun): 
+            <input type="number" name="time" required><br>
+
+            <!-- Tombol untuk mengirim form -->
+            <button type="submit">Hitung</button>
+        </form>
+    </div>
+</body>
+</html>

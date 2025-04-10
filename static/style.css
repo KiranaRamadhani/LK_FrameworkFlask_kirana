@@ -1,0 +1,18 @@
+/* Mengatur font utama untuk seluruh halaman, warna latar belakang, posisi teks, dan padding */
+body {
+    font-family: Arial, sans-serif;         /* Menggunakan font Arial atau sans-serif jika Arial tidak tersedia */
+    background-color: #f4f4f4;              /* Warna latar belakang abu-abu terang */
+    text-align: center;                     /* Menengahkan semua teks */
+    padding: 50px;                          /* Memberi jarak di sekeliling isi halaman */
+}
+
+/* Mengatur tampilan untuk elemen heading h1 */
+h1 {
+    color: #333;                            /* Warna teks abu gelap */
+}
+
+/* Mengatur tampilan untuk elemen paragraf <p> */
+p {
+    font-size: 18px;                        /* Ukuran font 18 piksel */
+    color: #666;                            /* Warna teks abu-abu sedang */
+}
